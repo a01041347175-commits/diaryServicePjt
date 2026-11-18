@@ -1,0 +1,15 @@
+package com.office.member;
+
+import java.net.http.HttpRequest;
+import java.net.http.HttpResponse;
+
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+
+public interface IMemberService {
+
+	public int signup(HttpServletRequest request, HttpServletResponse response);
+	
+	public int signin(HttpServletRequest request, HttpServletResponse response);
+	
+}

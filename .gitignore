@@ -1,0 +1,29 @@
+
+# Eclipse Dynamic Web Project
+
+# Java 컴파일 결과물
+/build/
+/bin/
+/out/
+/target/
+*.class
+
+# 웹 프로젝트 컴파일 결과물
+/WebContent/WEB-INF/classes/
+/src/main/webapp/WEB-INF/classes/
+
+# Eclipse 워크스페이스 데이터
+/.metadata/
+/.recommenders/
+
+# 임시 파일 및 로그
+*.log
+*.tmp
+*.bak
+*.swp
+*~
+
+# OS 자동 생성 파일
+.DS_Store
+Thumbs.db
+Desktop.ini
