@@ -7,7 +7,7 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.lang.module.ModuleDescriptor.Requires;
+
 
 
 @WebServlet("*.mem")
@@ -31,7 +31,9 @@ public class MemberController extends HttpServlet {
 		String nextPage = null;
 		
 		switch (command) {
-		case "": {
+		case "/signup_form.mem": {
+			
+			nextPage = "view/member/signup_form.jsp";
 			
 			break;
 			

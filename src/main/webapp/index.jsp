@@ -5,6 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <jsp:include page="./view/include/title.jsp" />
+<link href="./res/css/index.css" rel="stylesheet" type="text/css">
 </head>
 <body>
 
@@ -13,7 +14,7 @@
 	<jsp:include page="./view/include/nav.jsp" />
 
 	<article>
-		<div>
+		<div class="article_wrap">
 			This page is HOME.
 		</div>
 	</article>
