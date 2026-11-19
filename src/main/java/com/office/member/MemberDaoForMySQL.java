@@ -74,8 +74,59 @@ public class MemberDaoForMySQL implements IMemberDao {
 
 	@Override
 	public int insertNewMember(MemberDto memberDto) {
-		// TODO Auto-generated method stub
-		return 0;
+		
+		int result = 0;
+		
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		
+		try {
+			// 1. 드라이버 로드 in 메모리
+			Class.forName(DRIVER);
+			
+			// 2. 다리 건설 : Connection 생성 by 인증(Authentication)
+			conn = DriverManager.getConnection(URL, USERNAME, PASSWORD);
+			
+			// 3. SQL 작성(작업 지시서)
+			String sql = "insert into tbl_member(memId, memPw, memMail, memPhone) values(?, ?, ?, ?)";
+			
+			// 4. 일꾼 선택(생성)
+			pstmt = conn.prepareStatement(sql);
+			
+			// 5. 데이터 주입
+			pstmt.setString(1, memberDto.getMemId());
+			pstmt.setString(1, memberDto.getMemPw());
+			pstmt.setString(1, memberDto.getMemMail());
+			pstmt.setString(1, memberDto.getMemPhone());
+			
+			
+			// 6. 작업 지시
+			result = pstmt.executeUpdate();
+			
+			/*
+			 * executeQuery() :  select, 반환형 : ResultSet -> while문으로 사용
+			 * executeUpdate() : insert, update, delete, 반환형 : int -> 영향을 받은 행의 수
+			 */
+			
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+			
+		} finally {
+			
+			// 8. 외부 자원 해제
+			try {
+				if (rs != null) pstmt.close();
+				if (rs != null) conn.close();
+				
+			} catch (Exception e2) {
+				e2.printStackTrace();
+			}
+			
+			
+		}
+		
+		return result;
 	}
 
 	@Override
