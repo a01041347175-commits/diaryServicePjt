@@ -2,37 +2,33 @@ package com.office.member;
 
 public class MemberDto {
 
-	private int memNo;	
+	private int memNo;
 	private String memId;
 	private String memPw;
-	private String memMai;
+	private String memMail;
 	private String memPhone;
 	private String memRegDate;
 	private String memModDate;
 	
-	public MemberDto() {
-		// TODO Auto-generated constructor stub
-	}
+	public MemberDto() { }
 
-	public MemberDto(int memNo, String memId, String memPw, String memMai, String memPhone, String memRegDate,
-			String memModDate) {
-		
+	public MemberDto(int memNo, String memId, String memPw, 
+			String memMail, String memPhone, String memRegDate, String memModDate) {
 		this.memNo = memNo;
 		this.memId = memId;
 		this.memPw = memPw;
-		this.memMai = memMai;
+		this.memMail = memMail;
 		this.memPhone = memPhone;
 		this.memRegDate = memRegDate;
 		this.memModDate = memModDate;
 	}
 	
-	public MemberDto(String memId, String memPw, String memMai, String memPhone) {
-		
+	public MemberDto(String memId, String memPw, String memMail, String memPhone) {
 		this.memId = memId;
 		this.memPw = memPw;
-		this.memMai = memMai;
+		this.memMail = memMail;
 		this.memPhone = memPhone;
-		
+
 	}
 
 	public int getMemNo() {
@@ -59,12 +55,12 @@ public class MemberDto {
 		this.memPw = memPw;
 	}
 
-	public String getMemMai() {
-		return memMai;
+	public String getMemMail() {
+		return memMail;
 	}
 
-	public void setMemMai(String memMai) {
-		this.memMai = memMai;
+	public void setMemMail(String memMail) {
+		this.memMail = memMail;
 	}
 
 	public String getMemPhone() {
@@ -90,9 +86,5 @@ public class MemberDto {
 	public void setMemModDate(String memModDate) {
 		this.memModDate = memModDate;
 	}
-	
-	
-	
-	
-	
+
 }
